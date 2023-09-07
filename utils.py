@@ -122,9 +122,15 @@ class utilFunctions:
 
         return 1-(summation_1 * summation_2)
 
-    #Function to normalise and standardise coodinates from an image/frame
-    def extract_coordinates(poseModel, image_path):
-        image = cv2.imread(image_path)
+    def extract_coordinates(poseModel, image_input):
+        # Check if the input is a string (indicating a path) or a numpy array (indicating an image)
+        if isinstance(image_input, str):
+            image = cv2.imread(image_input)
+        elif isinstance(image_input, np.ndarray):
+            image = image_input
+        else:
+            raise ValueError("Input should be either an image path or a numpy array representing an image")
+
         # Convert image color from BGR to RGB
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -135,6 +141,27 @@ class utilFunctions:
         # Normalize pose coordinates
         coords_norm = preprocessing.normalize(coords_std, norm='l2')
         return image, coords, coords_norm, cf
+
+            
+    def extract_video_coordinates(pose, video_path):
+        vid_coords = []
+        vid_frames = []
+        
+        # Read the video file
+        cap = cv2.VideoCapture(video_path)
+        
+        while True:
+            ret, frame = cap.read()
+            
+            if ret:
+                # Extract coordinates for the current frame
+                coords, _, _, _ = utilFunctions.extract_coordinates(pose, frame) # Assuming you have a similar function for a single frame
+                vid_coords.append(coords)
+                vid_frames.append(frame)
+            else:
+                cap.release()
+                break
+        return vid_coords, vid_frames
 
     #Function to process and extract coordinates from a video file
     def process_video(video_path):
