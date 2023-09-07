@@ -3,6 +3,9 @@
 ## Introduction
 MoveMatch is an advanced pose comparison technology designed to revolutionize the realm of human pose analysis. Leveraging Google's MediaPipe for pose estimation, MoveMatch offers a comprehensive solution for frame-by-frame pose comparison between a reference image and an input video. Its applications range from helping athletes refine their techniques to assisting yoga practitioners in achieving complex poses.
 
+[Youtube](https://youtu.be/SLubTIXvGio)
+[Medium](https://lnkd.in/gDGzjtp6)
+
 ---
 
 ## Table of Contents
