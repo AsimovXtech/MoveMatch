@@ -50,37 +50,25 @@ For a deeper dive into the code, check out our [Technical Documentation](LINK_HE
 
 ## Installation
 
-# Clone the repository
+### Clone the repository
 ```git clone https://github.com/Xcompany129/MoveMatch.git```
 
-# Navigate into the directory
+### Navigate into the directory
 ```cd MoveMatch```
 
-# Install dependencies
+### Install dependencies
 ```pip install -r requirements.txt```
 
 ---
 
 ## Usage
 
-# CLI
+### CLI
 To run a sample:
 ```python movematch.py --video ./reference_videos/test_1.mp4 --reference reference_images/ref_1.png --output results/```
 
-# Jupyter Notebook
+### Jupyter Notebook
 Use the notebook for a detailed understanding [MoveMatch.ipynb](MoveMatch.ipynb)
-
----
-
-## Results
-
-![Sample Result](./site_files/result.png)
-
----
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
 ---
 
