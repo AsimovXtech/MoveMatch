@@ -50,16 +50,15 @@ For a deeper dive into the code, check out our [Technical Documentation](LINK_HE
 
 ## Installation
 
-\`\`\`bash
+```bash```
 # Clone the repository
-git clone https://github.com/YourUsername/MoveMatch.git
+```git clone https://github.com/YourUsername/MoveMatch.git```
 
 # Navigate into the directory
-cd MoveMatch
+```cd MoveMatch```
 
 # Install dependencies
-pip install -r requirements.txt
-\`\`\`
+```pip install -r requirements.txt```
 
 ---
 
