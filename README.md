@@ -74,7 +74,7 @@ Use the notebook for a detailed understanding [MoveMatch.ipynb](MoveMatch.ipynb)
 
 ## Results
 
-![Sample Result](site_files/result.png "Title")
+![Sample Result](https://github.com/Xcompany129/MoveMatch/blob/main/site_files/result.png)
 
 ---
 
