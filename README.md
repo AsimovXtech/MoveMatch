@@ -11,7 +11,6 @@ MoveMatch is an advanced pose comparison technology designed to revolutionize th
 - [How It Works](#how-it-works)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -74,7 +73,7 @@ Use the notebook for a detailed understanding [MoveMatch.ipynb](MoveMatch.ipynb)
 
 ## License
 
-This project is licensed under the Apache-2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 license - see the [LICENSE](LICENSE) file for details.
 
 ---
 
