@@ -17,10 +17,11 @@ def process_video_and_image(video_path, ref_image_path, result_folder):
     ref_img, ref_coords, ref_norm_coords, ref_cf = utilFunctions.extract_coordinates(pose, ref_image_path)
 
     # Extract video coordinates (please implement vid_coords extraction from video in utilFunctions)
-    vid_coords, vid_frames = utilFunctions.extract_video_coordinates(pose, video_path)
-    print('gg')
+    vid_frames, vid_coords, vid_cf = utilFunctions.process_video(video_path)
+    print('\nVideo processed')
     # Apply smoothing
     smooth_coords = savgol_filter(np.array(vid_coords), 10, 1, axis=0)
+    print('Coordinates Smoothed')
 
     # Compute scores
     scores = []

@@ -50,9 +50,8 @@ For a deeper dive into the code, check out our [Technical Documentation](LINK_HE
 
 ## Installation
 
-```bash```
 # Clone the repository
-```git clone https://github.com/YourUsername/MoveMatch.git```
+```git clone https://github.com/Xcompany129/MoveMatch.git```
 
 # Navigate into the directory
 ```cd MoveMatch```
@@ -64,17 +63,12 @@ For a deeper dive into the code, check out our [Technical Documentation](LINK_HE
 
 ## Usage
 
-Refer to the example code provided in the `example.py` file to understand how to integrate MoveMatch into your project.
+# CLI
+To run a sample:
+```python movematch.py --video ./reference_videos/test_1.mp4 --reference reference_images/ref_1.png --output results/```
 
-\`\`\`python
-from MoveMatch import MoveMatch
-
-# Initialize MoveMatch
-mm = MoveMatch(reference_image_path, video_path)
-
-# Perform pose matching
-mm.match_pose()
-\`\`\`
+# Jupyter Notebook
+Use the notebook for a detailed understanding [MoveMatch.ipynb](MoveMatch.ipynb)
 
 ---
 

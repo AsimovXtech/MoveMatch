@@ -142,27 +142,6 @@ class utilFunctions:
         coords_norm = preprocessing.normalize(coords_std, norm='l2')
         return image, coords, coords_norm, cf
 
-            
-    def extract_video_coordinates(pose, video_path):
-        vid_coords = []
-        vid_frames = []
-        
-        # Read the video file
-        cap = cv2.VideoCapture(video_path)
-        
-        while True:
-            ret, frame = cap.read()
-            
-            if ret:
-                # Extract coordinates for the current frame
-                coords, _, _, _ = utilFunctions.extract_coordinates(pose, frame) # Assuming you have a similar function for a single frame
-                vid_coords.append(coords)
-                vid_frames.append(frame)
-            else:
-                cap.release()
-                break
-        return vid_coords, vid_frames
-
     #Function to process and extract coordinates from a video file
     def process_video(video_path):
         # Initialize arrays to store output frames and pose coordinates
@@ -172,6 +151,7 @@ class utilFunctions:
 
         cap = cv2.VideoCapture(video_path)
         n_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        c = 0
 
         # Initialize pose estimation model
         pose = mp_pose.Pose(model_complexity=2, min_detection_confidence=0.1, min_tracking_confidence=0.2)
@@ -179,6 +159,7 @@ class utilFunctions:
         vid_start = time.time()
         if cap.isOpened(): 
             while(cap.isOpened()):
+                c+=1
                 # Start timer
                 start_time = time.time()
 
@@ -199,7 +180,7 @@ class utilFunctions:
 
                     # End timer and print processing time
                     end_time = time.time()
-                    print(f'Processing Video: {video_path.split("/")[-1]} | FPS: {1/(end_time-start_time) :.2f}', end='\r')
+                    print(f'Processing Video: {video_path.split("/")[-1]} | Frames: {c}/{n_frames} | FPS: {1/(end_time-start_time) :.2f}', end='\r')
                 else:
                     vid_end = time.time()
                     break
